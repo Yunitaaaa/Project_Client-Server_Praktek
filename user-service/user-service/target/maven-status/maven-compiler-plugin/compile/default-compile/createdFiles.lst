@@ -1,0 +1,6 @@
+com\yunita\userservice\controller\UserController.class
+com\yunita\userservice\dto\User.class
+com\yunita\userservice\service\UserServiceImpl.class
+com\yunita\userservice\UserServiceApplication.class
+com\yunita\userservice\repository\UserRepository.class
+com\yunita\userservice\service\UserService.class
