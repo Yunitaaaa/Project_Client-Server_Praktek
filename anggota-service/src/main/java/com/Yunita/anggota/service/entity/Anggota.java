@@ -4,6 +4,7 @@
  */
 package com.Yunita.anggota.service.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,9 +16,11 @@ import lombok.NoArgsConstructor;
  *
  * @author acer
  */
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class Anggota {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

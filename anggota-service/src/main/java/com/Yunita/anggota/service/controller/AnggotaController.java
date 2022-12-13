@@ -28,8 +28,10 @@ public class AnggotaController {
     public Anggota saveAnggota(@RequestBody Anggota anggota){
         return anggotaService.saveAnggota(anggota);
     }
+    
     @GetMapping("/{id}")
-    public Anggota findAnggotaById(@PathVariable("id")Long anggotaId){
+    public Anggota findAnggotaById(@PathVariable("id") Long anggotaId){
         return anggotaService.findAnggotaById(anggotaId);
     }
 }
+    
