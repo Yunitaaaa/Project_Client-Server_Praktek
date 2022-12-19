@@ -1,0 +1,7 @@
+com\Yunita\peminjaman\service\controller\PeminjamanController.class
+com\Yunita\peminjaman\service\PeminjamanServiceApplication.class
+com\Yunita\peminjaman\service\VO\ResponseTemplateVO.class
+com\Yunita\peminjaman\service\service\PeminjamanService.class
+com\Yunita\peminjaman\service\entity\Peminjaman.class
+com\Yunita\peminjaman\service\repository\PeminjamanRepository.class
+com\Yunita\peminjaman\service\VO\Anggota.class
