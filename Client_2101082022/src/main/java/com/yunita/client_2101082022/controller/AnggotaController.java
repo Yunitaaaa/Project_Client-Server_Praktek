@@ -4,10 +4,15 @@
  */
 package com.yunita.client_2101082022.controller;
 
+
+
 import com.yunita.client_2101082022.FormAnggota;
 import com.yunita.client_2101082022.model.Anggota;
 import com.yunita.client_2101082022.service.AnggotaService;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -46,4 +51,42 @@ public class AnggotaController {
         }
         return anggota;
     }
+    
+    public void updateAnggota(){
+        Anggota anggota = new Anggota();
+        anggota.setAnggotaId(Long.parseLong(formAnggota.getTxtIdAnggota().getText()));
+        anggota.setNama(formAnggota.getTxtNama().getText());
+        anggota.setAlamat(formAnggota.getTxtAlamat().getText());
+        anggota = anggotaService.updateAnggota(anggota);
+        if(anggota != null){
+            formAnggota.getTxtIdAnggota().setText(anggota.getAnggotaId().toString());
+            JOptionPane.showMessageDialog(formAnggota,"Update Data Berhasil");
+        }else{
+            JOptionPane.showMessageDialog(formAnggota, "Update Data Gagal");
+        }
+    }
+    
+    public void deleteAnggota(){
+        Long id = Long.parseLong(formAnggota.getTxtIdAnggota().getText());
+        anggotaService.deleteAnggota(id);
+        JOptionPane.showMessageDialog(formAnggota, "Delete Data Berhasil");
+    }
+    
+    public void viewTabel(){
+        DefaultTableModel tabelModel = (DefaultTableModel)
+                formAnggota.getTabelAnggota().getModel();
+        tabelModel.setRowCount(0);
+        List <Anggota> anggotaList = anggotaService.getAllAnggota();
+        for (Anggota anggota : anggotaList){
+            Object[] row = {
+                anggota.getAnggotaId(),
+                anggota.getNama(),
+                anggota.getAlamat(),
+                
+            };
+            tabelModel.addRow(row);
+        }
+    }
 }
+
+

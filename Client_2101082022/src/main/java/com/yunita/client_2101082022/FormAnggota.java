@@ -4,9 +4,12 @@
  */
 package com.yunita.client_2101082022;
 
+
+
 import com.yunita.client_2101082022.controller.AnggotaController;
 import com.yunita.client_2101082022.model.Anggota;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -24,10 +27,11 @@ public class FormAnggota extends javax.swing.JFrame {
         initComponents();
         controller = new AnggotaController(this);
         controller.bersihForm();
+        controller.viewTabel();
     }
-
-    public JTable getTableAnggota() {
-        return tableAnggota;
+    
+    public JTable getTabelAnggota(){
+        return TabelAnggota;
     }
 
     public JTextField getTxtAlamat() {
@@ -41,8 +45,8 @@ public class FormAnggota extends javax.swing.JFrame {
     public JTextField getTxtNama() {
         return txtNama;
     }
-    
-    
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -55,42 +59,41 @@ public class FormAnggota extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         txtIdAnggota = new javax.swing.JTextField();
         txtNama = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        btnCari = new javax.swing.JButton();
         txtAlamat = new javax.swing.JTextField();
-        btnSimpan = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tableAnggota = new javax.swing.JTable();
+        TabelAnggota = new javax.swing.JTable();
+        btnCari = new javax.swing.JButton();
+        btnSimpan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
         jLabel1.setText("ID Anggota");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(22, 20, 62, 16);
 
         jLabel2.setText("Nama Anggota");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 60, 90, 16);
-
-        txtIdAnggota.setText("jTextField1");
-        getContentPane().add(txtIdAnggota);
-        txtIdAnggota.setBounds(130, 12, 160, 30);
-
-        txtNama.setText("jTextField2");
-        txtNama.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNamaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtNama);
-        txtNama.setBounds(130, 50, 240, 30);
 
         jLabel3.setText("Alamat");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 90, 80, 16);
+
+        txtIdAnggota.setText("jTextField1");
+
+        txtNama.setText("jTextField2");
+
+        txtAlamat.setText("jTextField3");
+
+        TabelAnggota.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Anggota Id", "Nama", "Alamat"
+            }
+        ));
+        jScrollPane1.setViewportView(TabelAnggota);
 
         btnCari.setText("Cari");
         btnCari.addActionListener(new java.awt.event.ActionListener() {
@@ -98,17 +101,6 @@ public class FormAnggota extends javax.swing.JFrame {
                 btnCariActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCari);
-        btnCari.setBounds(300, 20, 72, 22);
-
-        txtAlamat.setText("jTextField3");
-        txtAlamat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAlamatActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtAlamat);
-        txtAlamat.setBounds(130, 90, 240, 30);
 
         btnSimpan.setText("Simpan");
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -116,26 +108,62 @@ public class FormAnggota extends javax.swing.JFrame {
                 btnSimpanActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSimpan);
-        btnSimpan.setBounds(20, 120, 72, 22);
 
-        tableAnggota.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tableAnggota);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(89, 89, 89)
+                                .addComponent(txtAlamat))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(45, 45, 45)
+                                .addComponent(txtNama))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(64, 64, 64)
+                                .addComponent(txtIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCari, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(23, 23, 23))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCari))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSimpan)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 150, 370, 280);
-
-        setSize(new java.awt.Dimension(416, 444));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -146,19 +174,15 @@ public class FormAnggota extends javax.swing.JFrame {
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
-        Anggota anggota = controller.saveAnggota();
+        Anggota anggota = 
+                controller.saveAnggota();
+                controller.viewTabel();
+                controller.bersihForm();
+        
         if(anggota!=null){
-            JOptionPane.showMessageDialog(this, "Entry data Ok");
+            JOptionPane.showMessageDialog(this, "Entri Data Ok");
         }
     }//GEN-LAST:event_btnSimpanActionPerformed
-
-    private void txtAlamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlamatActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAlamatActionPerformed
-
-    private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNamaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,6 +210,9 @@ public class FormAnggota extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FormAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -196,15 +223,16 @@ public class FormAnggota extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelAnggota;
     private javax.swing.JButton btnCari;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tableAnggota;
     private javax.swing.JTextField txtAlamat;
     private javax.swing.JTextField txtIdAnggota;
     private javax.swing.JTextField txtNama;
     // End of variables declaration//GEN-END:variables
+
 }
