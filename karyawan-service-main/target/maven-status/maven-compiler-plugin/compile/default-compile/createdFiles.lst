@@ -1,0 +1,5 @@
+com\yunita\karyawan\service\controller\KaryawanController.class
+com\yunita\karyawan\service\repository\KaryawanRepository.class
+com\yunita\karyawan\service\entity\Karyawan.class
+com\yunita\karyawan\service\KaryawanServiceApplication.class
+com\yunita\karyawan\service\service\KaryawanService.class
