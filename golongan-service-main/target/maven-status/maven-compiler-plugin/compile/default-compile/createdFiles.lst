@@ -1,0 +1,5 @@
+com\yunita\golongan\service\entity\Golongan.class
+com\yunita\golongan\service\service\GolonganService.class
+com\yunita\golongan\service\repository\GolonganRepository.class
+com\yunita\golongan\service\GolonganServiceApplication.class
+com\yunita\golongan\service\controller\GolonganController.class
