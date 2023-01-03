@@ -6,7 +6,6 @@ package com.Yunita.pengembalian.service.service;
 
 import com.Yunita.pengembalian.service.VO.Peminjaman;
 import com.Yunita.pengembalian.service.VO.ResponseTemplateVo;
-import com.Yunita.pengembalian.service.VO.peminjaman;
 import com.Yunita.pengembalian.service.entity.Pengembalian;
 import com.Yunita.pengembalian.service.repository.PengembalianRepository;
 import org.springframework.beans.factory.annotation.Autowired;

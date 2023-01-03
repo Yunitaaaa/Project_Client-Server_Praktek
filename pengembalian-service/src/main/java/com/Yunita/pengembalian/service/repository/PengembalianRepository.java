@@ -16,6 +16,4 @@ import org.springframework.stereotype.Repository;
 public interface PengembalianRepository extends JpaRepository<Pengembalian, Long> {
 
     public Pengembalian findByPengembalianId(Long pengembalianId);
-
-    public Pengembalian save(Pengembalian pengembalian);
 }
