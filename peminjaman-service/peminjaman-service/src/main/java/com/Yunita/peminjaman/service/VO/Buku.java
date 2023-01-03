@@ -4,7 +4,10 @@
  */
 package com.Yunita.peminjaman.service.VO;
 
-import com.Yunita.peminjaman.service.entity.Peminjaman;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,11 +16,19 @@ import lombok.NoArgsConstructor;
  *
  * @author acer
  */
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseTemplateVO {
-    private Peminjaman peminjaman;
-    private Anggota anggota;
-    private Buku buku;
+
+public class Buku {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long bukuId;
+    private String judul;
+    private String pengarang;
+    private String penerbit;
+    private String tahun_terbit;
+
 }
