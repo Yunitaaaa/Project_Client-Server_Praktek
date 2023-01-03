@@ -20,16 +20,4 @@ public class ResponseTemplateVO {
     private Peminjaman peminjaman;
     private Anggota anggota;
     private Buku buku;
-
-    public void setBuku(Buku buku) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setAnggota(Anggota anggota) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setPeminjaman(Peminjaman peminjaman) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
