@@ -1,8 +1,0 @@
-com\yunita\gaji\service\repository\GajiRepository.class
-com\yunita\gaji\service\vo\Karyawan.class
-com\yunita\gaji\service\controller\GajiController.class
-com\yunita\gaji\service\service\GajiService.class
-com\yunita\gaji\service\entity\Gaji.class
-com\yunita\gaji\service\vo\ResponseTemplateVO.class
-com\yunita\gaji\service\GajiServiceApplication.class
-com\yunita\gaji\service\vo\Golongan.class

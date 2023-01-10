@@ -1,2 +1,0 @@
-# gaji-service
- 
